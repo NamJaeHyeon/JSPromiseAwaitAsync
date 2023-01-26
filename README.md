@@ -86,45 +86,14 @@ For example,
     console.log(1); // 1. Promise-codeA
     
     await new Promise(function(resolve,reject){
-        console.log(1,1); // 2-1. Promise-codeB, setTimeout-codeA 
+        console.log('2-1'); // 2-1. Promise-codeB, setTimeout-codeA 
         setTimeout(function(){
             resolve(); // 2-3. Promise-codeB, setTimeout-codeB
-            console.log(1,2);
+            console.log('2-3');
         },1000);
-        console.log(1,3); // 2-2. Promise-codeB, setTimeout-codeC
+        console.log('2-2'); // 2-2. Promise-codeB, setTimeout-codeC
     });
     
-    console.log(2); // 3. Promise-codeC
-    
-    await new Promise(function(resolve,reject){ // It takes 0.5 second to go to the next line.
-        setTimeout(function(){
-            resolve();
-        },500);
-    });
-    console.log(3);
-    await new Promise(function(resolve,reject){ // It takes 0.4 second to go to the next line.
-        setTimeout(function(){
-            resolve();
-        },400);
-    });
-    console.log(4);
-    await new Promise(function(resolve,reject){ // It takes 0.3 second to go to the next line.
-        setTimeout(function(){
-            resolve();
-        },300);
-    });
-    console.log(5);
-    await new Promise(function(resolve,reject){ // It takes 0.2 second to go to the next line.
-        setTimeout(function(){
-            resolve();
-        },200);
-    });
-    console.log(6);
-    await new Promise(function(resolve,reject){ // It takes 0.1 second to go to the next line.
-        setTimeout(function(){
-            resolve();
-        },100);
-    });
-    console.log(7);
+    console.log(3); // 3. Promise-codeC
 })()
 ```
