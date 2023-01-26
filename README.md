@@ -16,7 +16,7 @@ In JavaScript, a class is a special type of object that is used as a blueprint f
 Asynchrony is a programming paradigm where multiple operations can occur independently of each other, without blocking the execution of the program. This allows the program to continue running and responding to other events while waiting for a long-running operation to complete. JavaScript allows for asynchrony through the use of callback functions, Promises, and async/await.
 
 ## setTimeout, setInterval
-** setTimeout Function **
+**setTimeout Function**
 ```
 // codeA
 setTimeout(function(){
