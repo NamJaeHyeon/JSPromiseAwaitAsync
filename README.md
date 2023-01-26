@@ -26,7 +26,7 @@ Asynchrony is a programming paradigm where multiple operations can occur indepen
   
 ## setTimeout, setInterval  
 **setTimeout Function**
-```
+```JavaScript
 // codeA
 setTimeout(function(){
   // codeB
@@ -39,7 +39,7 @@ setTimeout(function(){
 (If Code C has not completed after time milliseconds, Code B will execute along with Code C)  
 
 For example
-```
+```JavaScript
 let a = 3;
 setTimeout(() => {
     console.log(a); // 4
@@ -58,7 +58,7 @@ It is executed as if the setTimeout function is ignored, and then the function e
   
   
 **setInterval Function (+ clearInterval Function)**
-```
+```JavaScript
 // codeA
 let value1 = setInterval(function(){ // return the executing function's id.
   // codeB
@@ -89,7 +89,7 @@ If you follow this rule, you will rarely get an error.
   
   
 Next, I will introduce the usage and the order of operation.
-```
+```JavaScript
 // codeA
 await new Promise(func(resolveFunction,rejectFunction){
   // codeB
@@ -106,7 +106,7 @@ await new Promise(func(resolveFunction,rejectFunction){
   
   
 For example,
-```
+```JavaScript
 (async function(){
     console.log(1); // 1. Promise-codeA
     
