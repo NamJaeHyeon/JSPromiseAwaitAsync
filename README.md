@@ -91,7 +91,7 @@ If you follow this rule, you will rarely get an error.
 Next, I will introduce the usage and the order of operation.
 ```JavaScript
 // codeA
-await new Promise(func(resolveFunction,rejectFunction){
+await new Promise(function(resolveFunction,rejectFunction){
   // codeB
   resolveFunction(valueToReturn);
   // codeC
