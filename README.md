@@ -1,12 +1,12 @@
 # Javascript : Promise, Await, And Async
 Git repository for understanding asynchronous execution code. It begins with an explanation of 'await new Promise()'.
 
-- base on...
-- setTimeout, setInterval : Examples of asynchronous
-- await new Promise()
-- async, await chains
-- What is Promise?
-- What is Async and Await?
+1. base on...
+2. setTimeout, setInterval : Examples of asynchronous
+3. await new Promise()
+4. async, await chains
+5. What is Promise?
+6. What is Async and Await?
 
 ## base on...
 1. Understanding Functions
@@ -17,6 +17,47 @@ In JavaScript, a class is a special type of object that is used as a blueprint f
 Asynchrony is a programming paradigm where multiple operations can occur independently of each other, without blocking the execution of the program. This allows the program to continue running and responding to other events while waiting for a long-running operation to complete. JavaScript allows for asynchrony through the use of callback functions, Promises, and async/await.
 
 ## setTimeout, setInterval
+- setTimeout Function
+```
+// codeA
+setTimeout(function(){
+  // codeB
+}, time);
+// codeC
+```
+1. codeA is executed.
+2. codeC is executed.
+3. Code B will start executing after Code C has been running for time milliseconds.
+(If Code C has not completed after time milliseconds, Code B will execute along with Code C)
+
+For example
+```
+let a = 3;
+setTimeout(() => {
+    console.log(a); // 4
+}, 1000);
+console.log(3); // 3
+a = 4;
+
+> 3
+> 4
+```
+It is executed as if the setTimeout function is ignored, and then the function entered as the argument of the setTimeout function is executed after 1 second.
+
+- setInterval Function
+```
+// codeA
+let value1 = setInterval(function(){ // return the executing function's id.
+  // codeB
+}, time1);
+// codeC
+setTimeout(()=>{
+  clearInterval(value1), // stop setInterval to execute.
+}, time2);
+```
+1. codeA and codeC are executed as if the setTimeout function is executed, ignoring the setInterval function.
+2. However, unlike the setTimeout function, the setInterval function repeats codeB at regular intervals.
+codeA -> codeC -> codeB -> codeB -> codeB -> ... (Repeat approximately time2/time1 times)
 
 ## await new Promise()
 First, I will introduce the usage and the order of operation.
@@ -31,7 +72,7 @@ await new Promise(func(resolveFunction,rejectFunction){
 ```
 1. codeA is executed.
 2. codeB is executed.
-3. codeC and codeD are executed at the same time (multitasking)
+3. codeC and codeD start running at the same time. (multitasking)
 
 For example,
 ```
