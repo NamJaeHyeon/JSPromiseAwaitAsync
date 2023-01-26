@@ -7,6 +7,8 @@ Git repository for understanding asynchronous execution code.
 4. What is Promise?
 5. What is Async and Await?
 
+
+
 ## base on...
 1. Understanding Functions
 
@@ -20,6 +22,10 @@ In JavaScript, a class is a special type of object that is used as a blueprint f
 
 The main topic we will learn this time.
 Asynchrony is a programming paradigm where multiple operations can occur independently of each other, without blocking the execution of the program. This allows the program to continue running and responding to other events while waiting for a long-running operation to complete. JavaScript allows for asynchrony through the use of callback functions, Promises, and async/await.
+
+
+
+
 
 ## setTimeout, setInterval
 **setTimeout Function**
@@ -49,6 +55,11 @@ a = 4;
 ```
 It is executed as if the setTimeout function is ignored, and then the function entered as the argument of the setTimeout function is executed after 1 second.
 
+
+
+
+
+
 **setInterval Function (+ clearInterval Function)**
 ```
 // codeA
@@ -63,6 +74,14 @@ setTimeout(()=>{
 1. codeA and codeC are executed as if the setTimeout function is executed, ignoring the setInterval function.
 2. However, unlike the setTimeout function, the setInterval function repeats codeB at regular intervals.
 codeA -> codeC -> codeB -> codeB -> codeB -> ... (Repeat approximately time2/time1 times)
+
+
+
+
+
+
+
+
 
 ## new Promise(), await, async
 First, there are rules to avoid errors.
@@ -85,6 +104,9 @@ await new Promise(func(resolveFunction,rejectFunction){
 1. codeA is executed.
 2. codeB is executed.
 3. codeC and codeD start running at the same time. (multitasking)
+
+
+
 
 For example,
 ```
