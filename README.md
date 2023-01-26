@@ -1,5 +1,5 @@
 # Javascript : Promise, Await, And Async
-Git repository for understanding asynchronous execution code. It begins with an explanation of 'await new Promise()'.
+Git repository for understanding asynchronous execution code.
 
 1. base on...
 2. setTimeout, setInterval : Examples of asynchronous
@@ -43,7 +43,7 @@ a = 4;
 ```
 It is executed as if the setTimeout function is ignored, and then the function entered as the argument of the setTimeout function is executed after 1 second.
 
-** setInterval Function (+ clearInterval Function) **
+**setInterval Function (+ clearInterval Function)**
 ```
 // codeA
 let value1 = setInterval(function(){ // return the executing function's id.
@@ -60,9 +60,9 @@ codeA -> codeC -> codeB -> codeB -> codeB -> ... (Repeat approximately time2/tim
 
 ## new Promise(), await, async
 First, there are rules to avoid errors.
-- Put a function that takes two arguments into the constructor unconditionally. : new Promise( ** function(a,b){} ** )
-- Put the await keyword in front of an async function. : ** await ** new Promise(function(a,b){})
-- To use the await keyword, be sure to add the async keyword to the out-of-scope function. : ** async ** function(){** await ** new Promise(function(a,b){})}
+- Put a function that takes two arguments into the constructor unconditionally. : new Promise( **function(a,b){}** )
+- Put the await keyword in front of an async function. : **await** new Promise(function(a,b){})
+- To use the await keyword, be sure to add the async keyword to the out-of-scope function. : **async** function(){**await** new Promise(function(a,b){})}
 If you follow this rule, you will rarely get an error.
 
 
